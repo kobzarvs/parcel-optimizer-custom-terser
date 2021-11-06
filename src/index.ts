@@ -53,10 +53,7 @@ export default new Optimizer({
     };
 
     const result = await minify(contents as string, minifyOptions);
-    // const result = await minify(contents as string, {sourceMap: true});
-
     const rawMap = JSON.parse(result.map as string) as RawSourceMap;
-    console.log('result.map', typeof result.map, result.map);
 
     if (map) {
       const vlq = map.toVLQ();
@@ -65,17 +62,6 @@ export default new Optimizer({
         names: rawMap.names
       });
       map.addVLQMap(vlq);
-
-      // let sourceMap;
-      // if (rawMap) {
-      //   sourceMap = SourceMap.generateEmptyMap({
-      //     projectRoot: vlq.sourceRoot!,
-      //     sourceName: bundle.name,
-      //     sourceContent: rawMap.sourcesContent?.join('\n') || ''
-      //   });
-      //   sourceMap.addNames(rawMap.names);
-      //   sourceMap.
-      // }
     }
 
     return {
