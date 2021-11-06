@@ -14,17 +14,6 @@ import {Async, Blob, BundleGraph, BundleResult, NamedBundle, PluginLogger, Plugi
 import {RawSourceMap} from 'source-map';
 
 
-interface OptimizeArgs<ConfigType> {
-  bundle: NamedBundle;
-  bundleGraph: BundleGraph<NamedBundle>;
-  contents: Blob;
-  map: SourceMap | null | undefined;
-  options: PluginOptions;
-  logger: PluginLogger;
-  config: ConfigType;
-  getSourceMapReference: (map: SourceMap | null | undefined) => Async<string | null | undefined>;
-}
-
 export default new Optimizer({
   async optimize(args): Promise<BundleResult> {
     const {
@@ -70,3 +59,4 @@ export default new Optimizer({
     };
   },
 });
+

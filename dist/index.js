@@ -35,9 +35,7 @@ var $8a59b0e901fa9274$export$2e2bcd8739ae039 = new $1dqRE$parcelplugin.Optimizer
             toplevel: true
         };
         const result = await $1dqRE$terser.minify(contents, minifyOptions);
-        // const result = await minify(contents as string, {sourceMap: true});
         const rawMap = JSON.parse(result.map);
-        console.log('result.map', typeof result.map, result.map);
         if (map) {
             const vlq = map.toVLQ();
             Object.assign(vlq, {
@@ -45,16 +43,6 @@ var $8a59b0e901fa9274$export$2e2bcd8739ae039 = new $1dqRE$parcelplugin.Optimizer
                 names: rawMap.names
             });
             map.addVLQMap(vlq);
-        // let sourceMap;
-        // if (rawMap) {
-        //   sourceMap = SourceMap.generateEmptyMap({
-        //     projectRoot: vlq.sourceRoot!,
-        //     sourceName: bundle.name,
-        //     sourceContent: rawMap.sourcesContent?.join('\n') || ''
-        //   });
-        //   sourceMap.addNames(rawMap.names);
-        //   sourceMap.
-        // }
         }
         return {
             map: map,
