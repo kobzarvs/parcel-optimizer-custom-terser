@@ -1,0 +1,28 @@
+{
+  "name": "parcel-optimizer-custom-terser",
+  "version": "1.0.0",
+  "source": "src/index.ts",
+  "module": "dist/index.es.js",
+  "main": "dist/index.js",
+  "types": "dist/types.d.ts",
+  "license": "MIT",
+  "devDependencies": {
+    "rimraf": "^3.0.2"
+  },
+  "scripts": {
+    "watch": "parcel watch",
+    "build": "npm run clear && cross-env NODE_ENV=production parcel build",
+    "clear": "rimraf dist lib .parcel-cache parcel-bundle-reports"
+  },
+  "dependencies": {
+    "@parcel/plugin": "^2.0.0",
+    "@parcel/source-map": "^2.0.0",
+    "cross-env": "^7.0.3",
+    "parcel": "^2.0.0",
+    "process": "^0.11.10",
+    "terser": "^5.9.0"
+  },
+  "engines": {
+    "parcel": "2.x"
+  }
+}
