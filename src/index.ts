@@ -37,7 +37,7 @@ export default new Optimizer({
     logger.info({message: `processing bundle '${bundle.name}'`});
 
     const minifyOptions: MinifyOptions = {
-      compress: false, //boolean | CompressOptions;
+      compress: false,
       ecma: 2020,
       ie8: false,
       keep_classnames: undefined,
