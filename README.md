@@ -1,5 +1,15 @@
 # parcel-optimizer-custom-terser
 
+## Install
+
+```shell
+yarn add parcel-optimizer-custom-terser -D
+
+or 
+
+npm install parcel-optimizer-custom-terser --save-dev
+```
+
 ## default minify options
 
 ```typescript
