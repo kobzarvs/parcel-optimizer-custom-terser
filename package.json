@@ -1,6 +1,6 @@
 {
   "name": "parcel-optimizer-custom-terser",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "source": "src/index.ts",
   "module": "dist/index.es.js",
   "main": "dist/index.js",
